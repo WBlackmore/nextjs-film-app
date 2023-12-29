@@ -1,10 +1,19 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import { getTrendingFilms } from "./utils/api_calls";
+import Card from "./components/Card";
 
-export default function Home() {
+export default async function HomePage() {
+  const movies = await getTrendingFilms();
+
   return (
-    <div>
-      <button className='btn btn-primary'>Button</button>
+    <div className="container mx-auto sm:px-4 my-3">
+      <h1 className="text-xl font-bold m-2">Trending</h1>
+      <div className="flex flex-wrap gap-2 justify-center">
+        {movies.map((movie) => {
+          return <Card movie={movie} />;
+        })}
+      </div>
     </div>
-  )
+  );
 }
