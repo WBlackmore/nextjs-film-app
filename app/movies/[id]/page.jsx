@@ -8,8 +8,8 @@ async function MovieDetailsPage({ params }) {
   const similarMovies = await getSimilarFilms(params.id);
 
   return (
-    <div className="my-4">
-      <div className="flex flex-col gap-3 mx-4 sm:mx-8 mb-12 sm:flex-row">
+    <div className="my-4  mx-auto">
+      <div className="flex flex-col gap-3 p-3 mx-auto max-w-screen-xl sm:mx-auto mb-12 sm:flex-row">
         <img
           className="h-auto max-w-64 rounded mx-auto"
           src={IMAGE_BASE_URL + movieDetails.poster_path}

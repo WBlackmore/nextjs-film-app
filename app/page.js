@@ -1,5 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import { getTrendingFilms } from "./utils/api_calls";
 import Card from "./components/Card";
 
